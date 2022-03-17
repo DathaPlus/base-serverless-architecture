@@ -1,12 +1,12 @@
-import { handlerPath } from '@libs/handler-resolver';
+import { handlerPath } from "@libs/core/HandlerResolver";
 
 export default {
-  handler: `${handlerPath(__dirname)}/handler.main`,
+  handler: `${handlerPath(__dirname)}/Handler.main`,
   events: [
     {
       http: {
-        method: 'get',
-        path: 'obtenerTodosPokemon',
+        method: "get",
+        path: "obtenerTodosPokemon",
       },
     },
   ],

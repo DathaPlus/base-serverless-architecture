@@ -1,24 +1,23 @@
-import fetch, {Response} from "node-fetch";
-import {Logger} from "@libs/Logger";
-import {PokemonApiResponse} from "../model/PokemonApiResponse";
+import { Logger } from "@libs/core/Logger";
+import { PokemonApiResponse } from "../model/PokemonApiResponse";
+import { Fetch } from "@libs/core/Fetch";
 
 export class PokemonGateway {
-    private readonly _pokemonUrl: string = "https://pokeapi.co/api/v2/pokemon";
+  private readonly _fetch: Fetch;
+  private readonly _pokemonUrl: string = "https://pokeapi.co/api/v2/pokemon";
 
-    constructor(private readonly _logger: Logger) {
-    }
+  constructor(private readonly _logger: Logger) {
+    this._fetch = new Fetch(this._logger);
+  }
 
-    public async getAll(limit: number): Promise<PokemonApiResponse> {
-        const response: Response = await fetch(`${this._pokemonUrl}?limit=${limit}`, {
-            method: "GET"
-        });
+  public getAll(limit: number): Promise<PokemonApiResponse> {
+    this._logger.info("PokemonGateway | getAll");
 
-        const pokemons: PokemonApiResponse = <PokemonApiResponse>await response.json();
-
-        this._logger.info("Response", pokemons);
-        // add magic before returning data
-
-        this._logger.info("PokemonGateway | getAll");
-        return pokemons;
-    }
+    return this._fetch.call<PokemonApiResponse>(
+      `${this._pokemonUrl}?limit=${limit}`,
+      {
+        method: "GET",
+      }
+    );
+  }
 }

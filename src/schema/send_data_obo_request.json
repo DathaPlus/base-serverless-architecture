@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "SendDataOBORequest",
+  "title": "SendDataOBORequest",
+  "type": "object",
+  "description": "Hello Request Body",
+  "additionalProperties": false,
+  "properties": {
+    "nombre": {
+      "type": "string"
+    },
+    "tipo_documento": {
+      "type": "string"
+    },
+    "num_documento": {
+      "type": "string"
+    }
+  },
+  "required": ["nombre", "tipo_documento"]
+}

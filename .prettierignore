@@ -1,0 +1,12 @@
+package.json
+package-lock.json
+.jscpd.json
+/.cache-loader
+/.coverage
+/.nyc_output
+/types
+/.webpack
+/.serverless
+/.esbuild/
+/coverage/
+/dist/

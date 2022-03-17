@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "HelloRequest",
+  "title": "HelloRequest",
+  "type": "object",
+  "description": "Hello Request Body",
+  "additionalProperties": false,
+  "properties": {
+    "phone": {
+      "type": "string",
+      "description": "Phone"
+    }
+  },
+  "required": ["phone"]
+}

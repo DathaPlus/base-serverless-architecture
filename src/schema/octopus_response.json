@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "OctopusResponse",
+  "title": "OctopusResponse",
+  "type": "object",
+  "description": "Octopus response from Octopus Gateway",
+  "additionalProperties": false,
+  "properties": {
+    "response": {
+      "type": "object"
+    },
+    "status": {
+      "type": "number"
+    }
+  },
+  "required": ["response", "status"]
+}
