@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "SendDataOBOResponse",
+  "title": "SendDataOBOResponse",
+  "type": "object",
+  "description": "Hello Request Body",
+  "additionalProperties": false,
+  "properties": {
+    "status": {
+      "type": "boolean"
+    },
+    "message": {
+      "type": "string"
+    },
+    "idPedido": {
+      "type": "string"
+    },
+    "message_code": {
+      "type": "string"
+    }
+  },
+  "required": ["status", "message", "idPedido", "message_code"]
+}

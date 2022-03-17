@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "PokemonApiResponse",
+  "title": "PokemonApiResponse",
+  "type": "object",
+  "description": "Type object response from Pokemon Api",
+  "additionalProperties": false,
+  "properties": {
+    "count": {
+      "type": "number"
+    },
+    "next": {
+      "type": "string"
+    },
+    "previous": {
+      "type": "string"
+    },
+    "results": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "url"],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "required": ["count", "next", "previous", "results"]
+}

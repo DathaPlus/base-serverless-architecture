@@ -1,9 +1,14 @@
 {
-  "name": "base-project",
+  "name": "base-serverless-architecture",
   "version": "1.0.0",
   "description": "Serverless aws-nodejs-typescript template",
   "main": "serverless.ts",
   "scripts": {
+    "format": "npm run lint:format",
+    "json2ts": "npm run json2ts:generate && npm run json2ts:print",
+    "json2ts:generate": "rm -rf types && npx json2ts -i src/schema/ -o types/",
+    "json2ts:print": "cd types && ls && cd ..",
+    "lint:format": "prettier --write \"./**/*.{ts,js,json,yml,yaml}\" \"./.{lintstagedrc,nycrc,prettierrc}\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "engines": {
@@ -22,8 +27,11 @@
     "@types/node": "^14.14.25",
     "esbuild": "^0.14.11",
     "json-schema-to-ts": "^1.5.0",
+    "json-schema-to-typescript": "^10.1.5",
+    "prettier": "^2.5.1",
     "serverless": "^3.0.0",
     "serverless-esbuild": "^1.23.3",
+    "serverless-offline": "^8.5.0",
     "ts-node": "^10.4.0",
     "tsconfig-paths": "^3.9.0",
     "typescript": "^4.1.3"

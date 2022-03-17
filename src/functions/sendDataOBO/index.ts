@@ -6,10 +6,11 @@ export default {
     {
       http: {
         method: "post",
-        path: "hello",
+        path: "sendDataOBO",
         request: {
           schemas: {
-            "application/json": "${file(./src/schema/hello_request.json)}",
+            "application/json":
+              "${file(./src/schema/send_data_obo_request.json)}",
           },
         },
       },
